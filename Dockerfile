@@ -1,4 +1,4 @@
-FROM node:15
+FROM node
 WORKDIR /app
 # COPY package.json /app   is same as COPY package.json .
 # it means copy package.json into /app
