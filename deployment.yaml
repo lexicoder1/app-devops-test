@@ -1,0 +1,24 @@
+# sample deployment yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-service
+  labels:
+    env: prod
+    type: backend
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: product-service-backend
+  template:
+    metadata:
+      name: product-service-app-pod
+      labels:
+        app: product-service-backend   
+    spec:
+      containers:
+      - name: product-service-app-container
+        image: lexikhoder/product-service-app:latest
+        ports:
+        - containerPort: 3002 #this is the pod port that the container listens to
