@@ -19,6 +19,6 @@ spec:
     spec:
       containers:
       - name: product-service-app-container
-        image: lexikhoder/product-service-app:latest
+        image: lexikhoder/products:latest
         ports:
         - containerPort: 3002 #this is the pod port that the container listens to
